@@ -32,21 +32,31 @@ import sys
 
 def create_word_dict(filename):
     """Returns a word/count dict for the given file."""
-    # Your code here
-    return
+    store_words = {}
+    for word in filename:
+        if filename.count(word):
+            store_words.append(word, +1)  # {"the": 5}
+    return store_words
 
 
 def print_words(filename):
     """Prints one per line '<word> : <count>', sorted
     by word for the given file.
     """
-    # Your code here
+    # This function would print the words in a dictionary line by line
+    # {
+    # "the": 5
+    # "they": 6
+    # "house": 3
+    # }
     return
 
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
-    # Your code here
+    # This function would sort the words in the dictionary
+    # by the frequency of occurrence
+    # Ex: {"the": 5, "he": 4, "she": 3}
     return
 
 
