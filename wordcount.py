@@ -25,18 +25,25 @@ should return a dictionary with words as keys, and their counts as values.
 
 # Your name, plus anyone who helped you with this assignment
 # Give credit where credit is due.
-__author__ = "Timothy La"
+__author__ = "Timothy La, Received help from Joseph"
 
 import sys
 
 
 def create_word_dict(filename):
     """Returns a word/count dict for the given file."""
-    store_words = {}
-    for word in filename:
-        if filename.count(word):
-            store_words.append(word, +1)  # {"the": 5}
-    return store_words
+    new_dict = {}
+    with open("books/small.txt", "r") as f:
+        # f.read()
+        for line in f:
+            new_list = line.split()
+            for word in new_list:
+                word = word.lower()
+                if word not in new_dict:
+                    new_dict[word] = 1
+                else:
+                    new_dict[word] += 1
+        return new_dict
 
 
 def print_words(filename):
@@ -49,7 +56,8 @@ def print_words(filename):
     # "they": 6
     # "house": 3
     # }
-    return
+    call_dict_func = create_word_dict(filename)
+    print(call_dict_func)
 
 
 def print_top(filename):
@@ -57,7 +65,10 @@ def print_top(filename):
     # This function would sort the words in the dictionary
     # by the frequency of occurrence
     # Ex: {"the": 5, "he": 4, "she": 3}
-    return
+
+    # top 20 of most occurrence
+    call_dict_func = create_word_dict(filename)
+    print(call_dict_func)
 
 
 # This basic command line argument parsing code is provided and calls
