@@ -25,7 +25,12 @@ should return a dictionary with words as keys, and their counts as values.
 
 # Your name, plus anyone who helped you with this assignment
 # Give credit where credit is due.
-__author__ = "Timothy La (tla111), Received help from Joseph"
+__author__ = """
+Timothy La (tla111)
+Received help from Joseph for Problem 1
+Received help from Coach John W for Problem 2
+Solved Problem 3 on My Own!!!!!
+"""
 
 import sys
 
@@ -71,7 +76,13 @@ def print_top(filename):
 
     # top 20 of most occurrence
     call_dict_func = create_word_dict(filename)
-    print(call_dict_func)
+    sort_top_occurrences = sorted(
+        call_dict_func.items(), key=lambda x: x[1], reverse=True)
+    new_list = {}
+    for k, v in sort_top_occurrences:
+        if len(new_list) != 20:
+            new_list[k] = v
+    print(new_list)
 
 
 # This basic command line argument parsing code is provided and calls
