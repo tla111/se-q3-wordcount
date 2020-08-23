@@ -57,7 +57,10 @@ def print_words(filename):
     # "house": 3
     # }
     call_dict_func = create_word_dict(filename)
-    print(call_dict_func)
+    alphabetical_list_of_tuples = sorted(
+        call_dict_func.items(), key=lambda x: x[0])  # x is tuple
+    for k, v in alphabetical_list_of_tuples:
+        print(f"{k}:{v}")
 
 
 def print_top(filename):
