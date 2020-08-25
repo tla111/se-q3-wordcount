@@ -20,13 +20,13 @@ small_dict = {
     'but': 1, 'coach': 1, 'football': 1,
     'least': 1, 'need': 1, 'not': 3, 'should': 1,
     'to': 2, 'used': 1, 'we': 6, 'what': 3
-    }
+}
 
 alice_top_20 = [
     '1605', '766', '706', '614', '518', '493', '421', '362',
     '352', '333', '265', '261', '249', '222', '221', '208',
     '206', '176', '169', '155'
-    ]
+]
 
 
 class TestWordcount(unittest.TestCase):

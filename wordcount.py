@@ -38,7 +38,7 @@ import sys
 def create_word_dict(filename):
     """Returns a word/count dict for the given file."""
     new_dict = {}
-    with open("books/small.txt", "r") as f:
+    with open(filename, "r") as f:
         # f.read()
         for line in f:
             new_list = line.split()
@@ -78,10 +78,10 @@ def print_top(filename):
     call_dict_func = create_word_dict(filename)
     sort_top_occurrences = sorted(
         call_dict_func.items(), key=lambda x: x[1], reverse=True)
-    new_list = {}
+    new_list = []
     for k, v in sort_top_occurrences:
         if len(new_list) != 20:
-            new_list[k] = v
+            new_list.append(f"{v}")
     print(new_list)
 
 
