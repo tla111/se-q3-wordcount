@@ -80,7 +80,7 @@ def print_top(filename):
         call_dict_func.items(), key=lambda x: x[1], reverse=True)
     new_list = []
     for k, v in sort_top_occurrences:
-        if len(new_list) != 20:
+        if len(new_list) < 20:
             new_list.append(f"{v}")
     print(new_list)
 
