@@ -39,7 +39,6 @@ def create_word_dict(filename):
     """Returns a word/count dict for the given file."""
     new_dict = {}
     with open(filename, "r") as f:
-        # f.read()
         for line in f:
             new_list = line.split()
             for word in new_list:
@@ -49,6 +48,18 @@ def create_word_dict(filename):
                 else:
                     new_dict[word] += 1
         return new_dict
+
+# 1. Create an empty dictionary to be used later
+# 2. Read the file that gets passed in and store it as f
+# 3. Loop over each line in file
+#       Split each word of the line and store in a list
+#       Loop over each word in the list
+#           Change each word to lowercase
+#           Option 1: If the word is not a key in new_dict
+#               Put 1 as the value of the key
+#           Option 2: If the word is a key in new_dict
+#               Increment the count of the value
+# 4. Return new_dict to be used in other functions
 
 
 def print_words(filename):
@@ -67,6 +78,12 @@ def print_words(filename):
     for k, v in alphabetical_list_of_tuples:
         print(f"{k}:{v}")
 
+# 1. Get the result from the create_word_dict function and store it
+# 2. Sort the words in call_dict_func in abc order by the looking at
+#   index[0]
+# 3. Loop over the keys and value in alphabetical_list_of_tuples
+# 4. Print the key and value on each line
+
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
@@ -84,9 +101,17 @@ def print_top(filename):
             new_list.append(f"{v}")
     print(new_list)
 
+# 1. Get the result from the create_word_dict function and store it
+# 2. Sort the values of call_dict_func from descending order
+# 3. Loop over the sorted words (sort_top_occurrences)
+#       Option 1: If the length of new_list is less than 20
+#           Add the value to new_list
+# 4. Print out new_list
 
 # This basic command line argument parsing code is provided and calls
 # the print_words() and print_top() functions which you must implement.
+
+
 def main(args):
     if len(args) != 2:
         print('usage: python wordcount.py {--count | --topcount} file')
